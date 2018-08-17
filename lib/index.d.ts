@@ -9,7 +9,6 @@ interface Entry {
     value: number;
 }
 export declare function cmp(a: number | string, b: number | string): Ordering;
-export declare function toVersion(str?: string | null): VersionVector;
 export declare class VersionVector {
     readonly entries: Entry[];
     constructor(obj?: Readonly<Entry[]> | string);
@@ -28,4 +27,5 @@ export declare class VersionVector {
     merge(other: Readonly<VersionVector>): Readonly<VersionVector>;
     cmp(other: Readonly<VersionVector>): Ordering;
 }
+export declare function toVersion(str?: string | null): VersionVector;
 export {};

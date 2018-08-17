@@ -1,4 +1,4 @@
-import { toVersion, VersionVector, Ordering } from '../src';
+import { Ordering, toVersion, VersionVector } from '../src';
 
 it('from string', () => {
 	const expected = {
@@ -39,7 +39,7 @@ it('bump', () => {
 });
 
 it('cmp', () => {
-	const testCases: { ord: Ordering, v1: string, v2: string }[] = [
+	const testCases: Array<{ ord: Ordering, v1: string, v2: string }> = [
 		{ ord: Ordering.Equal, v1: '', v2: '' },
 		{ ord: Ordering.Equal, v1: '', v2: '10.0' },
 		{ ord: Ordering.Equal, v1: '10.0', v2: '' },
@@ -68,7 +68,7 @@ it('cmp', () => {
 });
 
 it('merge', () => {
-	const testCases: { v1: string, v2: string, res: string }[] = [
+	const testCases: Array<{ v1: string, v2: string, res: string }> = [
 		{ v1: '', v2: '', res: '' },
 		{ v1: '1.10,2.20', v2: '1.10,2.20', res: '1.10,2.20' },
 		{ v1: '', v2: '1.10', res: '1.10' },
