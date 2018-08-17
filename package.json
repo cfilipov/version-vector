@@ -3,17 +3,20 @@
   "version": "1.0.0",
   "description": "Simple implementation of version vectors in Javascript/Typescript",
   "main": "index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "jest",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-    "lint": "tslint -p tsconfig.json"
+    "lint": "tslint -p tsconfig.json",
+    "prepublishOnly" : "npm run format && npm run lint && npm test",
+    "prepare" : "npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cfilipov/version-vector.git"
   },
-  "keywords": [],
+  "keywords": ["vector", "clock"],
   "author": "Cristian Filipov <filipov@gmail.com>",
   "license": "MIT",
   "bugs": {
